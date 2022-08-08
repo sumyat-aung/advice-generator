@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: hsl(218, 23%, 16%);
+}
+
+.box {
+  background-color: hsl(217, 19%, 24%);
+  width: 40%;
+  height: auto;
+  padding: 30px;
+  border-radius: 10px;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  box-shadow: 4px 4px 155px 15px rgba(0, 0, 0, 0.52);
+}
+
+#id {
+  color: hsl(150, 100%, 66%);
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+#advice {
+  text-align: center;
+  color: hsl(193, 38%, 86%);
+  width: 95%;
+  margin: 20px 0 40px;
+}
+
+#btn {
+  border-radius: 50%;
+  background-color: hsl(150, 100%, 66%);
+  padding: 10px 15px;
+  font-size: 19px;
+  border: none;
+  position: relative;
+  bottom: -50px;
+  transition: 0.4s linear;
+  cursor: pointer;
+}
+
+#btn:hover {
+  transform: scale(1.1);
+}
+
+/* responsive */
+
+@media all and (max-width: 800px) {
+  .box {
+    width: 60%;
+  }
+  #btn {
+    cursor: default;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .box {
+    width: 90%;
+  }
+}
+
+/* loading dot  */
+
+.col-3 {
+  display: none;
+  margin: 0 0 30px;
+}
+
+.dot-pulse {
+  position: relative;
+  left: -9999px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #9880ff;
+  color: #9880ff;
+  box-shadow: 9999px 0 0 -5px #9880ff;
+  animation: dotPulse 1.5s infinite linear;
+  animation-delay: 0.25s;
+}
+
+.dot-pulse::before,
+.dot-pulse::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #9880ff;
+  color: #9880ff;
+}
+
+.dot-pulse::before {
+  box-shadow: 9984px 0 0 -5px #9880ff;
+  animation: dotPulseBefore 1.5s infinite linear;
+  animation-delay: 0s;
+}
+
+.dot-pulse::after {
+  box-shadow: 10014px 0 0 -5px #9880ff;
+  animation: dotPulseAfter 1.5s infinite linear;
+  animation-delay: 0.5s;
+}
+
+@keyframes dotPulseBefore {
+  0% {
+    box-shadow: 9984px 0 0 -5px #9880ff;
+  }
+  30% {
+    box-shadow: 9984px 0 0 2px #9880ff;
+  }
+  60%,
+  100% {
+    box-shadow: 9984px 0 0 -5px #9880ff;
+  }
+}
+
+@keyframes dotPulse {
+  0% {
+    box-shadow: 9999px 0 0 -5px #9880ff;
+  }
+  30% {
+    box-shadow: 9999px 0 0 2px #9880ff;
+  }
+  60%,
+  100% {
+    box-shadow: 9999px 0 0 -5px #9880ff;
+  }
+}
+
+@keyframes dotPulseAfter {
+  0% {
+    box-shadow: 10014px 0 0 -5px #9880ff;
+  }
+  30% {
+    box-shadow: 10014px 0 0 2px #9880ff;
+  }
+  60%,
+  100% {
+    box-shadow: 10014px 0 0 -5px #9880ff;
+  }
+}

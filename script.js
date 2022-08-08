@@ -5,9 +5,6 @@ const btn = document.getElementById("btn");
 const id = document.getElementById("id");
 const advice = document.getElementById("advice");
 
-// to store data
-let data;
-
 // loading dot
 const loading = document.getElementsByClassName("col-3")[0];
 
@@ -15,19 +12,17 @@ const loading = document.getElementsByClassName("col-3")[0];
 
 //  generate btn eventlistener
 
-btn.addEventListener("click", function () {
+btn.addEventListener("click", () => {
   // adding loadting till the fetch data show up
   loading.style.display = "block";
 
-  // fetch random advice API
   fetch("https://api.adviceslip.com/advice")
     .then((res) => res.json())
     .then((adv) => {
-      data = adv.slip;
-
-      // display advice and id
+      let data = adv.slip;
+      console.log(data);
       advice.textContent = `"${data.advice}"`;
-      id.textContent = "ADVICE # " + data.id;
+      id.textContent = "ADVICE -- " + data.id;
 
       // remove loading cause data showed up
       loading.style.display = "none";

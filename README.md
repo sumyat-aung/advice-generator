@@ -22,6 +22,14 @@
 <br/>
 <br/>
 
+
+## Challenge
+
+###  [Expenses chart component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db)
+
+<br/>
+<br/>
+
 ## Built With
 
 - **HTML**
